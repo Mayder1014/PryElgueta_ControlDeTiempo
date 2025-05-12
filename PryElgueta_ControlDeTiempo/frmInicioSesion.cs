@@ -38,11 +38,13 @@ namespace PryElgueta_ControlDeTiempo
             if (btnTrabajo.Text == "Trabajo")
             {
                 tiempoSesion.Enabled = true;
+                toolStripStatusLabel1.Visible = true;
                 btnTrabajo.Text = "Finalizar";
             }
             else
             {
                 tiempoSesion.Enabled = false;
+                toolStripStatusLabel1.Visible = false;
                 tiempo = 0;
                 btnTrabajo.Text = "Trabajo";
             }
