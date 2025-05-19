@@ -16,7 +16,7 @@ namespace PryElgueta_ControlDeTiempo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAuditoria());
+            Application.Run(new frmInicioSesion());
         }
     }
 }

@@ -55,5 +55,16 @@ namespace PryElgueta_ControlDeTiempo
         {
             toolStripStatusLabel1.Text = (tiempo++).ToString();
         }
+
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAuditoria v = new frmAuditoria();
+            v.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace PryElgueta_ControlDeTiempo
 
         private void frmAuditoria_Load(object sender, EventArgs e)
         {
-
+            cambiarColorBoton();
         }
 
         private void timerTiempoTrabajo_Tick(object sender, EventArgs e)
@@ -48,8 +48,9 @@ namespace PryElgueta_ControlDeTiempo
             else
             {
                 lstCoordenadas.Visible = false; btnAuditar.Text = "Auditar";
-                panelTrabajo.Enabled = true;
+                panelTrabajo.Enabled = true; 
             }
+            cambiarColorBoton();
         }
 
         private void panelTrabajo_MouseLeave(object sender, EventArgs e)
@@ -67,5 +68,14 @@ namespace PryElgueta_ControlDeTiempo
 
             conexion.guardarCoordenadas(coordenadasXY);
         }
+
+        public void cambiarColorBoton()
+        {
+            if (btnAuditar.Text == "Auditar")
+                btnAuditar.BackColor = Color.Green;
+            else
+                btnAuditar.BackColor = Color.IndianRed;
+        }
+
     }
 }

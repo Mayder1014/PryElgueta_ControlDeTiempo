@@ -29,9 +29,10 @@ namespace PryElgueta_ControlDeTiempo
                 comandoBaseDatos = new SqlCommand(checkQuery, conexionBaseDatos);
                 comandoBaseDatos.Parameters.AddWithValue("@Coords", coordenadasEntrantes);
 
-                int existe = (int)comandoBaseDatos.ExecuteScalar(); //Si devuelve 0, es pq no se encontró las coordenadas (NO EXISTE).
-
-                if (existe > 0) //Aumenta el contador de las coordenadas encontrada.
+                var existe = comandoBaseDatos.ExecuteScalar(); //ExecuteScalar devolverá un objeto, si este es 0, entonces la coordenada existe.
+                                                               //Si fuera null, es pq no existe.
+                
+                if (existe != null) //Aumenta el contador de las coordenadas encontrada.
                 {
                     string updateQuery = "UPDATE CoordenadasXY SET Contador = Contador + 1 WHERE Coordenadas = @Coords";
                     SqlCommand updateCmd = new SqlCommand(updateQuery, conexionBaseDatos);
